@@ -1,0 +1,21 @@
+class CarPark:
+    def _init_(self, capacity):
+        self.capacity = capacity
+        self.spaces = capacity
+        self.cars = []
+
+    def park_car(self, car):
+        if self.spaces > 0:
+            self.cars.append(car)
+            self.spaces -= 1
+            return True
+        else:
+            return False
+
+    def unpark_car(self, car):
+        if car in self.cars:
+            self.cars.remove(car)
+            self.spaces += 1
+            return True
+        else:
+            return False
